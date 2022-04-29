@@ -659,10 +659,12 @@ class player
                         break;
                     case 14:
                         die = true;
+                        /*
                         if(niceMusic.getStatus() != sf::SoundSource::Playing){
                             niceMusic.play();
                             niceMusic.setVolume(1000);
                         }
+                        */
                         break;
                     case 21:
                         break;
@@ -1069,8 +1071,8 @@ int main(int, char const**)
     if(!font.loadFromFile(resourcePath()+"Resources/bubble.ttf"))
         return EXIT_FAILURE;
     
-    if(!niceMusic.openFromFile(resourcePath()+"Resources/music/"+songs[0]))
-        return EXIT_FAILURE;
+    //if(!niceMusic.openFromFile(resourcePath()+"Resources/music/"+songs[0]))
+    //    return EXIT_FAILURE;
     
     theLevel.draw();
     
@@ -1134,7 +1136,7 @@ int main(int, char const**)
                                 player.pos[1] = worlds.at(curWorld).pos[1];
                             }
                             if (player.die){
-                                niceMusic.stop();
+                                //niceMusic.stop();
                                 player.canMove = true;
                                 player.die = false;
                                 theLevel.levelReset(levels.at(curLevel).map);
